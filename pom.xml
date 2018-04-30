@@ -57,25 +57,20 @@
                     </execution>
                 </executions>
       </plugin>
-    </plugins>
-  </build>
   
-  
-   <build>
-     <plugins>
-       <plugin>
+      <plugin>
          <groupId>org.apache.maven.plugins</groupId>
          <artifactId>maven-war-plugin</artifactId>
          <version>3.2.0</version>
-         <configuration>
-           <webResources>
-             <resource>
-               <!-- this is relative to the pom.xml directory -->
-               <directory>resource2</directory>
-             </resource>
-           </webResources>
-         </configuration>
-       </plugin>
-     </plugins>
-   </build>
+         <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>war</goal>
+                        </goals>
+                    </execution>
+          </executions>
+      </plugin>
+    </plugins>
+  </build>
 </project>
